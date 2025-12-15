@@ -1,6 +1,3 @@
-//package1/BaseClass.java
-package package1;
-
 public class BaseClass {
     public int publicVar = 1;
     protected int protectedVar = 2;
@@ -16,9 +13,6 @@ public class BaseClass {
     }
 }
 
-//package1/SubClass.java
-package package1;
-
 public class SubClass extends BaseClass {
     public void accessFromSubClass() {
         System.out.println("SubClass (наследник в том же пакете):");
@@ -29,11 +23,6 @@ public class SubClass extends BaseClass {
     }
 }
 
-//package2/OtherClass.java
-package package2;
-
-import package1.BaseClass;
-
 public class OtherClass {
     public void accessFromOtherClass() {
         BaseClass base = new BaseClass();
@@ -42,20 +31,5 @@ public class OtherClass {
         // System.out.println("protectedVar = " + base.protectedVar); // ошибка!
         // System.out.println("defaultVar = " + base.defaultVar);      // ошибка!
         // System.out.println("privateVar = " + base.privateVar);      // ошибка!
-    }
-}
-
-//package2/SubClassInOtherPackage.java
-package package2;
-
-import package1.BaseClass;
-
-public class SubClassInOtherPackage extends BaseClass {
-    public void accessFromSubClassInOtherPackage() {
-        System.out.println("SubClass в другом пакете:");
-        System.out.println("publicVar = " + publicVar);           // доступно
-        System.out.println("protectedVar = " + protectedVar);     // доступно (наследование)
-        // System.out.println("defaultVar = " + defaultVar);      // ошибка! default не виден вне пакета
-        // System.out.println("privateVar = " + privateVar);      // ошибка!
     }
 }
